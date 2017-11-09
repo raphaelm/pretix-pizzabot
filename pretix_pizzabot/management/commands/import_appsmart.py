@@ -84,7 +84,7 @@ class Command(BaseCommand):
         if 0 < record.get('free_quan') < max_quan:
             max_quan = record.get('free_quan')
         if max_quan == -1:
-            max_quan = None
+            max_quan = len(record.get('ingredients')) + 1
 
         item.addons.create(
             addon_category=cat,
