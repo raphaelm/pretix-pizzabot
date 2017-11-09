@@ -83,6 +83,8 @@ class Command(BaseCommand):
         max_quan = record.get('max_quan')
         if 0 < record.get('free_quan') < max_quan:
             max_quan = record.get('free_quan')
+        if max_quan == -1:
+            max_quan = None
 
         item.addons.create(
             addon_category=cat,
