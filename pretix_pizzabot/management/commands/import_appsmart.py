@@ -58,7 +58,7 @@ class Command(BaseCommand):
                 default_price=s.get('delivery_price')
             )
             event.quotas.get(name="all").items.add(item)
-            if record.get('pic_url'):
+            if record.get('picurl'):
                 imgf = requests.get(record.get('picurl'))
                 item.picture.save(
                     'picture.jpg',
